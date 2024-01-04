@@ -1,0 +1,3 @@
+### GET request with a header
+GET http://localhost:8080/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0IiwiaXNzIjoiaXNzdWVyIiwiaWQiOiIxIiwiZXhwIjoxNzA0MzcyNTU4LCJpYXQiOjE3MDQzNzA3NTh9.PZU5EcjQ21GJ2IJ1IXj6hHH5f15Jd62EfQp010k_k1M
