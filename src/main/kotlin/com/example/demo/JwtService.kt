@@ -23,4 +23,23 @@ class JwtService {
             .signWith(key)
             .compact() ?: throw IllegalStateException("Failed to generate JWT")
     }
+
+    fun verifyJwt(header: String): Long {
+        val prefix = "bearer "
+
+        if (header.startsWith(prefix)) {
+            val jwt = header.substring(prefix.length)
+
+            return Jwts.parser()
+                .verifyWith(key)
+                .build()
+                .parseSignedClaims(jwt)
+                .payload
+                .get("id")
+                .toString()
+                .toLong()
+        }
+
+        throw IllegalArgumentException("Input string does not start with 'bearer '.")
+    }
 }
